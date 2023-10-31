@@ -27,6 +27,7 @@ def scan_directory(path):
     for img in walk_directory(path):
         image_paths.append(img)
     
+    print("## Length of image: ", len(image_paths))
     for i, v in tqdm(enumerate(image_paths), total=len(image_paths)):
         df.loc[i, 'image_path'] = v
         df_image_embeds.append(clip_searcher.get_image_features(Image.open(v)).flatten())

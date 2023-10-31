@@ -18,26 +18,28 @@ except:
 def search_by_text(text, top_k):
     if df is None:
         return
-
+    print(text)
     top_k_df = get_top_k_text_similarities(text, df, top_k)
+    print(top_k_df.to_numpy())
 
     images = []
     for i, row in top_k_df.iterrows():
         images.append(Image.open(row['image_path']))
 
-    return list(zip(images, top_k_df.image_path.to_numpy()))
+    # return list(zip(images, top_k_df.image_path.to_numpy()))
+    return zip(top_k_df.image_path.to_numpy())
 
 def search_by_image(image, top_k):
     if df is None:
         return
-
     top_k_df = get_top_k_image_similarities(image, df, top_k)
-
+    print(top_k_df.to_numpy())
     images = []
     for i, row in top_k_df.iterrows():
         images.append(Image.open(row['image_path']))
 
-    return list(zip(images, top_k_df.image_path.to_numpy()))
+    # return list(zip(images, top_k_df.image_path.to_numpy()))
+    return zip(top_k_df.image_path.to_numpy())
 
 def scan_dir(path):
     if path is None or not os.path.exists(path):
