@@ -27,7 +27,7 @@ def search_by_text(text, top_k):
         images.append(Image.open(row['image_path']))
 
     # return list(zip(images, top_k_df.image_path.to_numpy()))
-    return zip(top_k_df.image_path.to_numpy())
+    return zip(top_k_df.image_path.to_numpy(), top_k_df.image_path.to_numpy())
 
 def search_by_image(image, top_k):
     if df is None:
@@ -39,7 +39,7 @@ def search_by_image(image, top_k):
         images.append(Image.open(row['image_path']))
 
     # return list(zip(images, top_k_df.image_path.to_numpy()))
-    return zip(top_k_df.image_path.to_numpy())
+    return zip(top_k_df.image_path.to_numpy(), top_k_df.image_path.to_numpy())
 
 def scan_dir(path):
     if path is None or not os.path.exists(path):

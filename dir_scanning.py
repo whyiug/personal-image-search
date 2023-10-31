@@ -14,7 +14,7 @@ from PIL import Image
 def walk_directory(base):
     for root, ds, fs in os.walk(base):
         for f in fs:
-            if f.lower().endswith(('.bmp', '.dib', '.png', '.jpg', '.jpeg', '.pbm', '.pgm', '.ppm', '.tif', '.tiff')):
+            if f.lower().endswith(('.bmp', '.dib', '.png', '.jpg', '.jpeg', '.pbm', '.pgm', '.ppm', '.tif', '.tiff')) and not f.startswith('.'):
                 fullname = os.path.join(root, f)
                 yield fullname
 
