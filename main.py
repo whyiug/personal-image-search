@@ -18,7 +18,6 @@ except:
 def search_by_text(text, top_k):
     if df is None:
         return
-    print(text)
     top_k_df = get_top_k_text_similarities(text, df, top_k)
     print(top_k_df.to_numpy())
 

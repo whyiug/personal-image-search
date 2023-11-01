@@ -17,7 +17,6 @@ class ImageIndexer:
         # self.index.train(image_embeds)
         # self.index.add(image_embeds)
 
-
         if num_clusters is None:
             num_clusters = min(round(np.sqrt(image_embeds.shape[0])), image_embeds.shape[0] // 39) # Emperically determined
         n_dims = image_embeds.shape[1]

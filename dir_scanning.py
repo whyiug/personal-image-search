@@ -8,9 +8,6 @@ from clip import clip_searcher
 from clusterer import image_indexer
 from PIL import Image
 
-
-# path = '/Users/forrest/blue/code/github/personal-image-search/images'
-
 def walk_directory(base):
     for root, ds, fs in os.walk(base):
         for f in fs:
